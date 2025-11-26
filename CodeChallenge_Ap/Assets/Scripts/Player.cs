@@ -13,8 +13,10 @@ namespace Ap.CodeChallenge
             Moving
         }
 
-        public bool isMousePressed = false;
+        [SerializeField] private LayerMask ignoredMaskForMouseRaycast;
 
+        private bool isMousePressed = false;
+        private float maxRaycastDistance = 100f;
         private NavMeshAgent navMeshAgentComp;
         private PlayerStates currentPlayerState = PlayerStates.Idle;
 
@@ -51,7 +53,7 @@ namespace Ap.CodeChallenge
         {
             Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
 
-            if (Physics.Raycast(ray, out RaycastHit hit, 40f))
+            if (Physics.Raycast(ray, out RaycastHit hit, maxRaycastDistance, ~ignoredMaskForMouseRaycast))
             {
                 // Check where in the mesh we are hitting
                 if (NavMesh.SamplePosition(hit.point, out NavMeshHit navMeshHit, 0.5f, 1 << 0))
