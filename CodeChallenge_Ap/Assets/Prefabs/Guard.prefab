@@ -200,7 +200,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df9e4215353d90a438ea23c6fedb006a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 1.5
   OnIdleStarted:
     m_PersistentCalls:
       m_Calls: []
@@ -210,6 +209,12 @@ MonoBehaviour:
   OnPursuingStarted:
     m_PersistentCalls:
       m_Calls: []
+  enemyStateMaterials:
+  - {fileID: 2100000, guid: ed176da0f35fa1945a10cac08de03eb5, type: 2}
+  - {fileID: 2100000, guid: ed176da0f35fa1945a10cac08de03eb5, type: 2}
+  - {fileID: 2100000, guid: abb77b7a185e8bd4ebe009ab7cf082f8, type: 2}
+  - {fileID: 2100000, guid: b1266af1f4e577f46931353fc19b6708, type: 2}
+  attackRange: 1.5
   patrollingPath: []
   wonderingTime: 5
   ignoredMaskForLoS:
