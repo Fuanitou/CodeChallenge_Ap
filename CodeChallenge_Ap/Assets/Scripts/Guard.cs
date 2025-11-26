@@ -34,7 +34,6 @@ namespace Ap.CodeChallenge
         {
             if (other.CompareTag("Player"))
             {
-                Debug.Log("gotcha");
                 possibleTarget = other.GetComponent<NavMeshAgent>();
                 if (IsInLineOfSight(possibleTarget.transform))
                 {
