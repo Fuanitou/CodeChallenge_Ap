@@ -39,6 +39,7 @@ namespace Ap.CodeChallenge
                     currentTarget = possibleTarget;
                     possibleTarget = null;
                     currentState = EnemyState.Chasing;
+                    ChangeMaterial();
                 }
             }
         }
@@ -109,6 +110,7 @@ namespace Ap.CodeChallenge
             {
                 // Stop having an existential crisis and continue patrolling
                 currentState = EnemyState.Patrolling;
+                ChangeMaterial();
                 wonderingTimeElapsed = 0f;
             }
         }
@@ -150,6 +152,7 @@ namespace Ap.CodeChallenge
             currentTarget = null;
             wonderingTimeElapsed = 0f;
             currentState = EnemyState.Wondering;
+            ChangeMaterial();
 
             // Since the enemy goes into wonder state before patrol, patrol will move towards the next
             // waypoint if not moving, so, we just substract one from the current index
@@ -167,6 +170,7 @@ namespace Ap.CodeChallenge
             if (IsInLineOfSight(possibleTarget.transform))
             {
                 currentState = EnemyState.Chasing;
+                ChangeMaterial();
                 currentTarget = possibleTarget;
                 possibleTarget = null;
             }
